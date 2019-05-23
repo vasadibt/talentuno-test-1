@@ -1,16 +1,9 @@
 parameters:
   test.one.command.class: App\TestOneBundle\Command\TestOneCommand
-  test.two.command.class: App\TestOneBundle\Command\TestTwoCommand
 
 services:
   test.one.command:
     class: "%test.one.command.class%"
-    public: true
-    tags:
-      - { name: command }
-
-  test.two.command:
-    class: "%test.two.command.class%"
     public: true
     tags:
       - { name: command }

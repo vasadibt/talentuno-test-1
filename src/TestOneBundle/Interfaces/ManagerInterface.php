@@ -4,7 +4,7 @@ namespace App\TestOneBundle\Interfaces;
 
 interface ManagerInterface {
     /**
-     * @return array
+     * @return EntityInterface[]
      */
     public function findAll(): array;
 }

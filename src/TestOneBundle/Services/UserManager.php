@@ -3,7 +3,6 @@
 namespace App\TestOneBundle\Services;
 
 use App\TestOneBundle\Entities\User;
-use App\TestOneBundle\Interfaces\EntityInterface;
 use App\TestOneBundle\Interfaces\ManagerInterface;
 use App\TestOneBundle\Utils\Faker;
 
@@ -13,9 +12,8 @@ use App\TestOneBundle\Utils\Faker;
  */
 class UserManager implements ManagerInterface
 {
-
     /**
-     * @return EntityInterface[]
+     * @return User[]
      * @throws \Exception
      */
     public function findAll(): array

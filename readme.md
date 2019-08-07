@@ -3,7 +3,7 @@
 A szabályok:
 * meg kell valósítani a ManagerInterface -t (App\TestOneBundle\Interfaces), úgy
 hogy nem kell adatbázishoz kapcsolódjon, csak adjon vissza entitásoknak egy tömbjét (random adatokkal akár).
-A Manager entitásonként legyen megvalósítva külön osztályokba, minden Manager egy entitással foglalkozik csak.
+A Manager entitásonként legyenegv malósítva külön osztályokba, minden Manager egy entitással foglalkozik csak.
 * a Manager által visszaadott tömbben egy féle objektum lehet, ezeknek az objektumoknak a leírása
 az adott résznél található (Product, User, Cart, Order, Invoice)
 * a feladatnál megadott összes entitást (és Manager -t) használd fel
@@ -12,7 +12,7 @@ Dependency Injection Container csináljon
 * az entitások valósítsák meg az EntityInterface -t
 * az entitásoknak protected változóik vannak, amik getter/setter -el legyenek kezelve
 * az objektumokat át kell transzformálni tömbbé, mielőtt a ConnectorInterface megvalósításának elküldjük
-* a kapott tömböt és a típushoz tartozó URL -t át kell adni a ConnectorInterface megvalósításának sendDate
+* a kapott tömböt és a típushoz tartozó URL -t át kell adni a ConnectorInterface megvalósításának sendData
 metódusának
 * a ConnectorInterface megvalósítása a szabványos kimenetre kiírja a kapott URL -t és az adatot  
 

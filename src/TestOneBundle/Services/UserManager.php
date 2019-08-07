@@ -4,14 +4,20 @@ namespace App\TestOneBundle\Services;
 
 use App\TestOneBundle\Entities\User;
 use App\TestOneBundle\Interfaces\ManagerInterface;
+use App\TestOneBundle\Interfaces\UrlizeInterface;
+use App\TestOneBundle\Traits\ManagerTrait;
 use App\TestOneBundle\Utils\Faker;
 
 /**
  * Class UserManager
  * @package App\TestOneBundle\Services
  */
-class UserManager implements ManagerInterface
+class UserManager implements ManagerInterface, UrlizeInterface
 {
+    use ManagerTrait;
+
+    const URL = '/customer';
+
     /**
      * @return User[]
      * @throws \Exception

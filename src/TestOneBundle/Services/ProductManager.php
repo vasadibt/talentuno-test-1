@@ -4,14 +4,20 @@ namespace App\TestOneBundle\Services;
 
 use App\TestOneBundle\Entities\Product;
 use App\TestOneBundle\Interfaces\ManagerInterface;
+use App\TestOneBundle\Interfaces\UrlizeInterface;
+use App\TestOneBundle\Traits\ManagerTrait;
 use App\TestOneBundle\Utils\Faker;
 
 /**
  * Class ProductManager
  * @package App\TestOneBundle\Services
  */
-class ProductManager implements ManagerInterface
+class ProductManager implements ManagerInterface, UrlizeInterface
 {
+    use ManagerTrait;
+
+    const URL = '/product';
+
     /**
      * @return Product[]
      * @throws \Exception

@@ -2,6 +2,7 @@
 
 namespace App\TestOneBundle\Entities;
 
+use App\TestOneBundle\Interfaces\ArrayableInterface;
 use App\TestOneBundle\Interfaces\EntityInterface;
 use App\TestOneBundle\Traits\EntityTrait;
 use App\TestOneBundle\Utils\Validator;
@@ -10,11 +11,9 @@ use App\TestOneBundle\Utils\Validator;
  * Class Cart
  * @package App\TestOneBundle\Entities
  */
-class Cart implements EntityInterface
+class Cart implements EntityInterface, ArrayableInterface
 {
     use EntityTrait;
-
-    const URL = '/cart';
 
     /**
      * Cart item attributes
@@ -92,5 +91,16 @@ class Cart implements EntityInterface
             }
         }
         $this->items = $items;
+    }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return [
+            'email' => $this->getEmail(),
+            'items' => $this->getItems(),
+        ];
     }
 }

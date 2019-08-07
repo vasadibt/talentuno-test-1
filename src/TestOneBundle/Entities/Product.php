@@ -2,6 +2,7 @@
 
 namespace App\TestOneBundle\Entities;
 
+use App\TestOneBundle\Interfaces\ArrayableInterface;
 use App\TestOneBundle\Interfaces\EntityInterface;
 use App\TestOneBundle\Traits\EntityTrait;
 
@@ -9,11 +10,9 @@ use App\TestOneBundle\Traits\EntityTrait;
  * Class Product
  * @package App\TestOneBundle\Entities
  */
-class Product implements EntityInterface
+class Product implements EntityInterface, ArrayableInterface
 {
     use EntityTrait;
-
-    const URL = '/product';
 
     /**
      * @var mixed
@@ -41,10 +40,10 @@ class Product implements EntityInterface
             $this->setProductId($productId);
         }
         if ($price !== null) {
-            $this->setProductId($price);
+            $this->setPrice($price);
         }
         if ($description !== null) {
-            $this->setDescription($price);
+            $this->setDescription($description);
         }
     }
 
@@ -67,7 +66,7 @@ class Product implements EntityInterface
     /**
      * @return float
      */
-    public function getPrice(): float
+    public function getPrice():? float
     {
         return $this->price;
     }
@@ -94,5 +93,17 @@ class Product implements EntityInterface
     public function setDescription(string $description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return [
+            'productId' => $this->getProductId(),
+            'price' => $this->getPrice(),
+            'description' => $this->getDescription(),
+        ];
     }
 }

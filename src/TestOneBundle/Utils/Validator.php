@@ -31,7 +31,7 @@ class Validator
             return $arrayKeys == $keys;
         }
 
-        return array_diff($arrayKeys, $keys) == 0
-            && array_diff($keys, $arrayKeys) == 0;
+        return array_diff($arrayKeys, $keys) == []
+            && array_diff($keys, $arrayKeys) == [];
     }
 }

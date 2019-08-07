@@ -2,6 +2,7 @@
 
 namespace App\TestOneBundle\Entities;
 
+use App\TestOneBundle\Interfaces\ArrayableInterface;
 use App\TestOneBundle\Interfaces\EntityInterface;
 use App\TestOneBundle\Traits\EntityTrait;
 use App\TestOneBundle\Utils\Validator;
@@ -10,11 +11,9 @@ use App\TestOneBundle\Utils\Validator;
  * Class User
  * @package App\TestOneBundle\Entities
  */
-class User implements EntityInterface
+class User implements EntityInterface, ArrayableInterface
 {
     use EntityTrait;
-
-    const URL = '/customer';
 
     /**
      * @var string
@@ -102,5 +101,17 @@ class User implements EntityInterface
     public function setLastName(string $lastName): void
     {
         $this->lastName = $lastName;
+    }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return [
+            'email' => $this->getEmail(),
+            'firstName' => $this->getFirstName(),
+            'lastName' => $this->getLastName(),
+        ];
     }
 }

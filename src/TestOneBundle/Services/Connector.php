@@ -16,29 +16,13 @@ class Connector implements ConnectorInterface
     const BASE_URL = 'http://example.com';
 
     /**
-     * @var  ManagerInterface[]|UrlizeInterface[] Managers
+     * List of available managers
      */
-    protected $managers = [];
-
-    /**
-     * Connector constructor.
-     *
-     * @param ProductManager $product
-     * @param UserManager $user
-     * @param CartManager $cart
-     * @param OrderManager $order
-     * @param InvoiceManager $invoice
-     */
-    public function __construct(ProductManager $product, UserManager $user, CartManager $cart, OrderManager $order, InvoiceManager $invoice)
-    {
-        $this->managers = [
-            'product' => $product,
-            'user' => $user,
-            'cart' => $cart,
-            'order' => $order,
-            'invoice' => $invoice,
-        ];
-    }
+    const MANAGERS = [
+        ProductManager::class,
+        UserManager::class,
+        CartManager::class,
+    ];
 
     /**
      * @param string $url
@@ -57,7 +41,10 @@ class Connector implements ConnectorInterface
      */
     public function flushManagers()
     {
-        foreach ($this->managers as $manager) {
+        /** @var ManagerInterface|UrlizeInterface $manager */
+
+        foreach (static::MANAGERS as $managerClass) {
+            $manager = new $managerClass;
 
             $data = [];
             foreach ($manager->findAll() as $entity) {

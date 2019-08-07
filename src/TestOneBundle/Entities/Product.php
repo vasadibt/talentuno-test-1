@@ -3,6 +3,7 @@
 namespace App\TestOneBundle\Entities;
 
 use App\TestOneBundle\Interfaces\EntityInterface;
+use App\TestOneBundle\Traits\EntityTrait;
 
 /**
  * Class Product
@@ -10,6 +11,10 @@ use App\TestOneBundle\Interfaces\EntityInterface;
  */
 class Product implements EntityInterface
 {
+    use EntityTrait;
+
+    const URL = '/product';
+
     /**
      * @var mixed
      */

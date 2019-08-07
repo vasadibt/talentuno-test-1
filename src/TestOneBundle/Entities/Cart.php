@@ -3,6 +3,7 @@
 namespace App\TestOneBundle\Entities;
 
 use App\TestOneBundle\Interfaces\EntityInterface;
+use App\TestOneBundle\Traits\EntityTrait;
 use App\TestOneBundle\Utils\Validator;
 
 /**
@@ -11,6 +12,10 @@ use App\TestOneBundle\Utils\Validator;
  */
 class Cart implements EntityInterface
 {
+    use EntityTrait;
+
+    const URL = '/cart';
+
     /**
      * Cart item attributes
      */

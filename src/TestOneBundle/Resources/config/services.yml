@@ -17,5 +17,5 @@ services:
       - '@App\TestOneBundle\Services\ProductManager'
       - '@App\TestOneBundle\Services\UserManager'
       - '@App\TestOneBundle\Services\CartManager'
-#      - '@App\TestOneBundle\Services\OrderManager'
-#      - '@App\TestOneBundle\Services\InvoiceManager'
+      - '@App\TestOneBundle\Services\OrderManager'
+      - '@App\TestOneBundle\Services\InvoiceManager'

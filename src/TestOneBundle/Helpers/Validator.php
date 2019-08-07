@@ -1,10 +1,10 @@
 <?php
 
-namespace App\TestOneBundle\Utils;
+namespace App\TestOneBundle\Helpers;
 
 /**
  * Class Validator
- * @package App\TestOneBundle\Utils
+ * @package App\TestOneBundle\Helpers
  */
 class Validator
 {

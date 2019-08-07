@@ -5,7 +5,7 @@ namespace App\TestOneBundle\Entities;
 use App\TestOneBundle\Interfaces\ArrayableInterface;
 use App\TestOneBundle\Interfaces\EntityInterface;
 use App\TestOneBundle\Traits\EntityTrait;
-use App\TestOneBundle\Utils\Validator;
+use App\TestOneBundle\Helpers\Validator;
 
 /**
  * Class User

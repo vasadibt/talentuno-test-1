@@ -3,7 +3,7 @@
 A szabályok:
 * meg kell valósítani a ManagerInterface -t (App\TestOneBundle\Interfaces), úgy
 hogy nem kell adatbázishoz kapcsolódjon, csak adjon vissza entitásoknak egy tömbjét (random adatokkal akár).
-A Manager entitásonként legyenegv malósítva külön osztályokba, minden Manager egy entitással foglalkozik csak.
+A Manager entitásonként legyen megvalósítva külön osztályokba, minden Manager egy entitással foglalkozik csak.
 * a Manager által visszaadott tömbben egy féle objektum lehet, ezeknek az objektumoknak a leírása
 az adott résznél található (Product, User, Cart, Order, Invoice)
 * a feladatnál megadott összes entitást (és Manager -t) használd fel

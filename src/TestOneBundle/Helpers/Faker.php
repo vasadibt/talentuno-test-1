@@ -1,11 +1,11 @@
 <?php
 
 
-namespace App\TestOneBundle\Utils;
+namespace App\TestOneBundle\Helpers;
 
 /**
  * Class Faker
- * @package App\TestOneBundle\Utils
+ * @package App\TestOneBundle\Helpers
  * Generate fake data
  */
 class Faker

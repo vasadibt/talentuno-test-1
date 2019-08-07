@@ -6,7 +6,7 @@ use App\TestOneBundle\Entities\Cart;
 use App\TestOneBundle\Interfaces\ManagerInterface;
 use App\TestOneBundle\Interfaces\UrlizeInterface;
 use App\TestOneBundle\Traits\ManagerTrait;
-use App\TestOneBundle\Utils\Faker;
+use App\TestOneBundle\Helpers\Faker;
 
 /**
  * Class CartManager
@@ -25,7 +25,7 @@ class CartManager implements ManagerInterface, UrlizeInterface
     public function findAll(): array
     {
         $entities = [];
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 3; $i++) {
 
             $items = [];
             $countItem = rand(1, 2);

@@ -8,6 +8,10 @@ use App\TestOneBundle\Interfaces\EntityInterface;
 use App\TestOneBundle\Interfaces\ManagerInterface;
 use App\TestOneBundle\Interfaces\UrlizeInterface;
 
+/**
+ * Class Connector
+ * @package App\TestOneBundle\Services
+ */
 class Connector implements ConnectorInterface
 {
     /**
@@ -17,12 +21,17 @@ class Connector implements ConnectorInterface
 
     /**
      * List of available managers
+     * @var ManagerInterface[]|UrlizeInterface[]
      */
-    const MANAGERS = [
-        ProductManager::class,
-        UserManager::class,
-        CartManager::class,
-    ];
+    protected $managers;
+
+    /**
+     * Connector constructor.
+     */
+    public function __construct()
+    {
+        $this->managers = func_get_args();
+    }
 
     /**
      * @param string $url
@@ -41,17 +50,13 @@ class Connector implements ConnectorInterface
      */
     public function flushManagers()
     {
-        /** @var ManagerInterface|UrlizeInterface $manager */
+        /** @var EntityInterface|ArrayableInterface $entity */
 
-        foreach (static::MANAGERS as $managerClass) {
-            $manager = new $managerClass;
-
+        foreach ($this->managers as $manager) {
             $data = [];
             foreach ($manager->findAll() as $entity) {
-                /** @var EntityInterface|ArrayableInterface $entity */
                 $data [] = $entity->toArray();
             }
-
             $this->sendData($manager->getFullUrl(static::BASE_URL), $data);
         }
     }

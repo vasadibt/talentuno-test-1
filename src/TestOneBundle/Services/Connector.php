@@ -22,6 +22,8 @@ class Connector implements ConnectorInterface
         ProductManager::class,
         UserManager::class,
         CartManager::class,
+        OrderManager::class,
+        InvoiceManager::class,
     ];
 
     /**

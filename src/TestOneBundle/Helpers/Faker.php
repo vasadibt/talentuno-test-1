@@ -29,12 +29,20 @@ class Faker
     /**
      * @return string
      */
-    public static function productDescription()
+    public static function description()
     {
         return ucfirst(substr(str_shuffle('abcdefghijklmnopqrstuvwxyz'),0,5))
             . ' '
             . substr(str_shuffle('abcdefghijklmnopqrstuvwxyz'),0,8)
             . ' '
             . substr(str_shuffle('abcdefghijklmnopqrstuvwxyz'),0,4);
+    }
+
+    /**
+     * @return string
+     */
+    public static function productDescription()
+    {
+        return static::description();
     }
 }

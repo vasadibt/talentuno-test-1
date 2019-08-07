@@ -7,3 +7,8 @@ services:
     public: true
     tags:
       - { name: command }
+    arguments:
+      - '@App\TestOneBundle\Services\Connector'
+
+  App\TestOneBundle\Services\:
+    resource: '../../Services/*'

@@ -33,6 +33,6 @@ $application = new Application();
 /** @var \Symfony\Component\DependencyInjection\Container $container */
 
 $application->add($container->get('test.one.command'));
-$application->add($container->get('test.two.command'));
+// $application->add($container->get('test.two.command'));
 
 $application->run();

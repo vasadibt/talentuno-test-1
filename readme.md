@@ -12,7 +12,7 @@ Dependency Injection Container csináljon
 * az entitások valósítsák meg az EntityInterface -t
 * az entitásoknak protected változóik vannak, amik getter/setter -el legyenek kezelve
 * az objektumokat át kell transzformálni tömbbé, mielőtt a ConnectorInterface megvalósításának elküldjük
-* a kapott tömböt és a típushoz tartozó URL -t át kell adni a ConnectorInterface megvalósításának sendDate
+* a kapott tömböt és a típushoz tartozó URL -t át kell adni a ConnectorInterface megvalósításának sendData
 metódusának
 * a ConnectorInterface megvalósítása a szabványos kimenetre kiírja a kapott URL -t és az adatot  
 
